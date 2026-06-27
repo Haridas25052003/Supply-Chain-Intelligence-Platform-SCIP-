@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Environment variables
+.env
+
+# Spring Boot configuration (contains secrets)
+src/main/resources/application.properties
