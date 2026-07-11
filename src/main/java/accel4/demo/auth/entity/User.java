@@ -1,8 +1,7 @@
-package accel4.demo.entity;
+package accel4.demo.auth.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
 
@@ -32,7 +31,7 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role;
+    private UserRole role;
 
     @Column(nullable = false)
     private boolean active=true;
