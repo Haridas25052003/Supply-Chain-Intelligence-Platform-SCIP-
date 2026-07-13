@@ -1,6 +1,7 @@
 package accel4.demo.auth.dto.response;
 
-import com.accel4.scip.auth.entity.UserRole;
+
+import accel4.demo.auth.entity.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

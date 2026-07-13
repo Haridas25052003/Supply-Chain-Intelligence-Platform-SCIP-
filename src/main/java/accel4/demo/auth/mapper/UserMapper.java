@@ -1,6 +1,8 @@
 package accel4.demo.auth.mapper;
 
+
 import accel4.demo.auth.dto.request.RegisterRequest;
+import accel4.demo.auth.dto.response.UserResponse;
 import accel4.demo.auth.entity.User;
 import accel4.demo.auth.entity.UserRole;
 import org.springframework.stereotype.Component;
@@ -19,7 +21,7 @@ public class UserMapper {
     }
 
     public UserResponse toResponse(User user) {
-        return AuthResponse.builder()
+        return UserResponse.builder()
                 .id(user.getId())
                 .email(user.getEmail())
                 .firstName(user.getFirstName())

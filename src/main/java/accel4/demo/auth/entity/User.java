@@ -1,23 +1,23 @@
 package accel4.demo.auth.entity;
 
+import accel4.demo.auth.entity.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
-@Setter
+@Table(name = "users")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false , unique = true)
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
@@ -34,15 +34,18 @@ public class User {
     private UserRole role;
 
     @Column(nullable = false)
-    private boolean active=true;
+    @Builder.Default
+    private Boolean active = true;
 
-    @Column(nullable = false,updatable = false)
-    private LocalDateTime createdAt;
+    @Column(nullable = false, updatable = false)
+    @Builder.Default
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    @Column(nullable = false)
+    @Column
     private LocalDateTime updatedAt;
 
-
-
-
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
 }
