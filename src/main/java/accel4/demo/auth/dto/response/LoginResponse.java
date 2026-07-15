@@ -1,6 +1,6 @@
 package accel4.demo.auth.dto.response;
 
-import com.accel4.scip.auth.dto.response.UserResponse;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
